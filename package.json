@@ -1,0 +1,33 @@
+{
+  "name": "flatmin",
+  "version": "1.0.0",
+  "description": "Dresh bootstrap dashboard template",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm-run-all -p dev:*",
+    "dev:11ty": "npx eleventy --serve",
+    "dev:sass": "npx sass src/scss/main.scss:dist/assets/css/main.css --watch",
+    "dev:js": "npx esbuild --bundle src/js/main.js --outfile=dist/assets/js/main.js --watch",
+    "build": "run-s build:*",
+    "build:11ty": "npx eleventy",
+    "build:css": "npx sass src/scss/main.scss:dist/assets/css/main.css --style compressed --no-source-map",
+    "build:js": "npx esbuild --bundle src/js/main.js --outfile=dist/assets/js/main.js --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hayyi2/flatmin.git"
+  },
+  "author": "Hayyi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hayyi2/flatmin/issues"
+  },
+  "homepage": "https://github.com/hayyi2/flatmin#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "esbuild": "^0.17.14",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.60.0",
+    "bootstrap": "^5.2.3"
+  }
+}
