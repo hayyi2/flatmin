@@ -1,0 +1,66 @@
+---
+title: Badge
+---
+<div class="card">
+    <div class="card-body">
+        <div class="mb-4">
+            <p class="mb-2">Sample badges
+            </p>
+            <h6>Example heading <span class="badge text-bg-secondary">New</span></h6>
+            <p class="mb-0">Lorem ipsum <span class="badge text-bg-primary">New</span></p>
+        </div>
+        <div class="mb-4">
+            <p class="mb-2">Variant badges <code>`.badge text-bg-*`</code>
+            </p>
+            {% for item in variantsColor %}
+                <span class="badge text-bg-{{item}}">{{ item | title }}</span>
+            {% endfor %}
+        </div>
+        <div class="mb-4">
+            <p class="mb-2">Pill badges <code>`.badge rounded-pill text-bg-*`</code>
+            </p>
+            {% for item in variantsColor %}
+                <span class="badge rounded-pill text-bg-{{item}}">{{ item | title }}</span>
+            {% endfor %}
+        </div>
+        <div class="mb-4">
+            <p class="mb-2">Variant alternatives badges
+            </p>
+            {% for item in variantsColor %}
+                <span class="badge text-{{item}} bg-{{item}}" style="--bs-bg-opacity: .1;">{{ item | title }}</span>
+            {% endfor %}
+        </div>
+        <div class="mb-4">
+            <p class="mb-2">Dot badges
+            </p>
+            <div class="mb-2">
+                <p class="mb-0">
+                    <span class="badge-dot bg-success"></span>Active</p>
+                <p class="mb-0">
+                    <span class="badge-dot bg-secondary"></span>Inactive</p>
+            </div>
+            <div class="mb-0">
+                <span class="badge text-primary bg-primary" style="--bs-bg-opacity: .1;">
+                    <span class="badge-dot bg-primary"></span> Primary</span>
+                <span class="badge text-secondary bg-secondary" style="--bs-bg-opacity: .1;">
+                    <span class="badge-dot bg-secondary"></span> Secondary</span>
+                <span class="badge rounded-pill text-primary bg-primary" style="--bs-bg-opacity: .1;">
+                    <span class="badge-dot bg-primary"></span> Primary</span>
+                <span class="badge rounded-pill text-secondary bg-secondary" style="--bs-bg-opacity: .1;">
+                    <span class="badge-dot bg-secondary"></span> Secondary</span>
+            </div>
+        </div>
+        <div class="mb-4">
+            <p class="mb-2">Inside menu badges
+            </p>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">Sample Counter <div><span class="badge bg-primary text-primary" style="--bs-bg-opacity: .1;">New</span></div></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

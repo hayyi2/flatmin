@@ -1,0 +1,26 @@
+---
+title: Components
+---
+<div class="row">
+    <div class="col-lg-3 order-lg-1">
+        <div class="sidenav sidenav-pills" style="position: sticky;top: 5.5rem;">
+            <ul class="navbar-nav px-3">
+                {% for item in collections.component %}
+                    <li class="nav-item" style="--bs-nav-link-padding-y: .5rem;">
+                        <a class="nav-link" href="{{ page.url }}#{{ item.data.title | slugify }}" target="">{{ item.data.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg">
+        {% for item in collections.component %}
+            <div class="mb-5">
+                <div class="content-header">
+                    <h5 id="{{ item.data.title | slugify }}" style="scroll-margin-top: 5.5rem;" class="content-title">{{ item.data.title }}</h5>
+                </div>
+                {{ item.content | safe }}
+            </div>
+        {% endfor %}
+    </div>
+</div>

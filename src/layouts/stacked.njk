@@ -1,0 +1,19 @@
+{% extends "./base.njk" %}
+
+{% block contentLayout %}
+    {% include "header.njk" %}
+    <main class="content container mx-auto">
+        {% if title %}
+            <div class="content-header">
+                <h4 class="content-title ~mx-auto">{{ title }}</h4>
+                {# <div class="ms-auto">
+                    <button class="btn btn-primary">Action Button</button>
+                </div> #}
+            </div>
+        {% endif %}
+        <div class="content-body">
+            {{ content | safe }}
+        </div>
+    </main>
+    {% include "footer.njk" %}
+{% endblock %}

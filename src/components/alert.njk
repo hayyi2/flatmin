@@ -1,0 +1,72 @@
+---
+title: Alert
+---
+<div class="card mb-4">
+    <div class="card-body">
+        <p class="mb-2">Alert variant</p>
+        {% for item in variant %}
+            <div class="alert alert-{{item}}" role="alert">
+                <div class="me-auto">
+                    <span>A simple {{item}} alert—check it out!</span>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+        <p class="mb-2">Alert icon</p>
+        <div class="alert alert-success" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 me-3 icon icon-tabler icon-tabler-circle-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M9 12l2 2l4 -4"></path>
+            </svg>
+            <div class="pe-3 me-auto">
+                <p class="fw-semibold mb-0">Successfully uploaded</p>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <p class="mb-2">Alert link</p>
+        <div class="alert alert-info" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 me-3 icon icon-tabler icon-tabler-info-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <circle cx="12" cy="12" r="9"></circle>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                <polyline points="11 12 12 12 12 16 13 16"></polyline>
+            </svg>
+            <div class="pe-3 me-auto">
+                <p class="mb-0"><span class="fw-semibold">A new software update is available.</span> See what’s new in version 2.0.4.</p>
+            </div>
+            <a href="#" class="whitespace-nowrap font-medium text-blue-700 hover:text-blue-600">Details <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="mb-2">Alert list</p>
+        <div class="alert alert-danger" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 me-3 icon icon-tabler icon-tabler-alert-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <circle cx="12" cy="12" r="9"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <div class="pe-3 me-auto">
+                <div class="ml-3">
+                    <p class="fw-semibold mb-1">There were 2 errors with your submission</p>
+                    <ul role="list" class="mb-0 ps-5">
+                        <li>Your password must be at least 8 characters</li>
+                        <li>Your password must incslude at least one pro wrestling finishing move</li>
+                    </ul>
+                </div>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+<p class="mb-2">Alert outsite card with shadow</p>
+<div class="alert alert-success shadow" role="alert">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 me-3 icon icon-tabler icon-tabler-circle-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M9 12l2 2l4 -4"></path>
+    </svg>
+    <div class="pe-3 me-auto">
+        <p class="fw-semibold mb-0">Successfully uploaded</p>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>

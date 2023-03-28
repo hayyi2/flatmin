@@ -1,0 +1,60 @@
+<div class="offcanvas-header sticky-top navbar">
+    {% include "brand.njk" %}
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<div class="offcanvas-body">
+    <ul class="navbar-nav ~nav-pills mb-2 mb-lg-0">
+        {% for key, item in menu.sidenav %}
+            {% if item.divider %}
+                <li><hr class="divider"></li>
+            {% elif item.subMenu %}
+                {% set activeMenu = false %}
+                {% for subKey, subItem in item.subMenu %}
+                    {% if subItem.url in page.url %}
+                        {% set activeMenu = true %}
+                    {% endif %}
+                {% endfor %}
+                <li class="nav-item dropdown{{ ' show' if activeMenu else '' }}">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                        {% if item.icon %}
+                            {% include "icons/" + item.icon + ".njk" %}
+                        {% endif %}
+                        <span>{{item.label}}</span>
+                        {% include "icons/chevron-down.njk" %}
+                    </a>
+                    <ul class="dropdown-menu {{ ' show' if activeMenu else '' }}">
+                        {% for subKey, subItem in item.subMenu %}
+                            {% set activeMenu = true if (subItem.url == '' and page.url == '/') 
+                                or(subItem.url != '' and subItem.url in page.url)else 
+                                    false %}
+                            {% if subItem.divider %}
+                                <li><hr class="dropdown-divider"></li>
+                            {% else %}
+                                <li>
+                                    <a class="dropdown-item{{ ' active' if activeMenu else '' }}" href="{{ subItem.url }}">
+                                        {% if subItem.icon %}
+                                            {% include "icons/" + subItem.icon + ".njk" %}
+                                        {% endif %}
+                                        <span>{{ subItem.label }}</span>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% else %}
+                {% set activeMenu = true if (item.url == '' and page.url == '/') 
+                    or(item.url != '' and item.url in page.url)else 
+                        false %}
+                <li class="nav-item">
+                    <a class="nav-link{{ ' active' if activeMenu else '' }}" aria-current="page" href="{{ item.url }}">
+                        {% if item.icon %}
+                            {% include "icons/" + item.icon + ".njk" %}
+                        {% endif %}
+                        <span>{{ item.label }}</span>
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

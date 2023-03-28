@@ -1,0 +1,19 @@
+.offcanvas-header {
+    .btn-close {
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+}
+
+.offcanvas.bg-dark{
+    .offcanvas-header{
+        @extend .bg-dark;
+    }
+}
+
+.offcanvas.bg-white{
+    .offcanvas-header{
+        @extend .bg-white;
+    }
+}

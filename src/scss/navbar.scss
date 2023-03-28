@@ -1,0 +1,83 @@
+.navbar{
+    .avatar{
+        background-color: $component-active-bg;
+        color: $white;
+    }
+    &.navbar-dark{
+        .avatar{
+            color: $dark;
+        }
+    }
+}
+
+.navbar-nav {
+    &.nav-pills {
+        --#{$prefix}nav-link-padding-x: #{$nav-link-padding-x};
+    }
+}
+
+.navbar-expand {
+    @each $breakpoint in map-keys($grid-breakpoints) {
+        $next: breakpoint-next($breakpoint, $grid-breakpoints);
+        $infix: breakpoint-infix($next, $grid-breakpoints);
+
+        &#{$infix} {
+            @include media-breakpoint-up($next) {
+                .navbar-brand {
+                    margin-right: $navbar-brand-margin-end;
+                    margin-left: 0;
+                }
+                .navbar-nav:not(.nav-tabs){
+                    padding-top: ($navbar-height - $nav-link-height) * .5;
+                    padding-bottom: ($navbar-height - $nav-link-height) * .5;
+                }
+
+                .nav-tabs {
+                    .nav-link{
+                        padding-top: ($navbar-height - $line-height-base) * .5;
+                        padding-bottom: (($navbar-height - $line-height-base) * .5) - $nav-tabs-border-width;
+                    }
+
+                    .dropdown-menu{
+                        margin-top: 0;
+                    }
+                }
+            }
+            @include media-breakpoint-down($next) {
+                .navbar-brand {
+                    margin-right: auto;
+                    margin-left: $navbar-brand-margin-end;
+                }
+                .nav-tabs {
+                    .nav-link{
+                        padding-top: ($navbar-height - $line-height-base) * .5;
+                        padding-bottom: (($navbar-height - $line-height-base) * .5) - $nav-tabs-border-width;
+                    }
+                }
+
+                .navbar-right {
+                    .nav-link{
+                        padding-right: calc(var(--bs-navbar-nav-link-padding-x) * .5);
+                        padding-left: calc(var(--bs-navbar-nav-link-padding-x) * .5);
+                    }
+                    .dropdown-menu {
+                        position: absolute;
+                        box-shadow: $dropdown-box-shadow;
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.navbar-right {
+    .navbar-nav {
+        flex-direction: row;
+        align-items: center;
+        &:not(.nav-tabs){
+            padding-top: ($navbar-height - $nav-link-height) * .5;
+            padding-bottom: ($navbar-height - $nav-link-height) * .5;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.badge {
+    display: inline;
+
+    .bg-lt {
+        --#{$prefix}bg-opacity: 0.1;
+    }
+
+    .badge-dot{
+        margin-top: -0.2em;
+        margin-right: 0.25em;
+    }
+}
+
+.badge-dot {
+    width: $font-size-base * .5;
+    height: $font-size-base * .5;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 1em;
+    margin-right: 0.5em;
+    margin-top: -0.1em;
+}

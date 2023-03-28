@@ -1,0 +1,100 @@
+body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.wrapper-content{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.content {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.content-header {
+    display: flex;
+    padding-bottom: 1rem;
+}
+
+.content-title {
+    font-size: $h4-font-size;
+    margin-top: .375rem;
+    margin-bottom: .375rem;
+}
+
+.content-body{
+    .content-header {
+        display: flex;
+        padding-bottom: .5rem;
+    }
+    .content-title {
+        font-size: $h5-font-size;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
+}
+
+.brand-text {
+    font-weight: $font-weight-bold;
+    letter-spacing: $letter-spacing;
+    line-height: $navbar-brand-height;
+}
+
+footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: auto;
+}
+
+@each $size, $value in $sizes {
+    .w-#{$size} {
+        width: $value;
+    }
+    .h-#{$size} {
+        height: $value;
+    }
+}
+
+@each $key, $value in $max-width {
+    .max-w-#{$key} {
+        max-width: $value;
+    }
+}
+
+.avatar {
+    display: inline-block;
+    border-radius: 50rem;
+    text-align: center;
+    vertical-align: middle;
+    @each $size, $value in $sizes {
+        &.h-#{$size} {
+            line-height: $value;
+        }
+    }
+}
+
+.bg-dark, .text-bg-dark{
+    .show-dark{
+        display: block;
+    }
+
+    .hidden-dark{
+        display: none;
+    }
+}
+.bg-white{
+    .show-dark{
+        display: none;
+    }
+}

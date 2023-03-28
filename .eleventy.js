@@ -5,6 +5,9 @@ module.exports = function (eleventyConfig) {
         return process.env.ELEVENTY_RUN_MODE !== 'serve' ? deployUrl : '/'
     });
 
+    eleventyConfig.addPassthroughCopy("src/assets");
+    eleventyConfig.addLayoutAlias('default', 'stacked.njk');
+
     eleventyConfig.setServerOptions({
         liveReload: true,
         domDiff: true,

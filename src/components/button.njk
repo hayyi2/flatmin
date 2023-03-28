@@ -1,0 +1,129 @@
+---
+title: Button
+---
+<div class="card">
+    <div class="card-body">
+        <div class="mb-4">
+            <p class="mb-2">Default button <code>`.btn .btn-default`</code>
+            </p>
+            <div class="mb-2">
+                <button class="btn btn-default">Button Default</button>
+            </div>
+            <div class="py-2 px-4 bg-dark rounded-2">
+                <div class="mb-2">
+                    <code>.bg-dark</code>
+                </div>
+                <button class="btn btn-default">Button Default</button>
+            </div>
+        </div>
+        <div class="mb-4">
+            <p class="mb-2">Variant button <code>`.btn .btn-*`</code>
+            </p>
+            {% for item in variant %}
+                <button class="btn btn-{{item}}">{{ item | title }}</button>
+            {% endfor %}
+        </div>
+        <div class="mb-4">
+            <p class="mb-2">Disabled button <code>`.disabled`</code>
+            </p>
+            {% for item in variant %}
+                <button class="btn btn-{{item}} disabled">{{ item | title }}</button>
+            {% endfor %}
+        </div>
+        <div class="mb-4">
+            <p class="mb-2">Outline button <code>`.btn .btn-outline-*`</code>
+            </p>
+            {% for item in variant %}
+                <button class="btn btn-outline-{{item}}">{{ item | title }}</button>
+            {% endfor %}
+        </div>
+        <div class="mb-4">
+            <p class="mb-2">Button size <code>`.btn-lg`</code>
+                <code>`.btn-sm`</code>
+            </p>
+            <button class="btn btn-primary btn-lg">Button lg</button>
+            <button class="btn btn-primary">Button</button>
+            <button class="btn btn-primary btn-sm">Button sm</button>
+            <button class="btn btn-primary btn-xs">Button xs</button>
+        </div>
+        <div class="mb-4">
+            <p class="mb-2">Button with icon, add class <code>`.h-5 .w-5 .me-2`</code> to svg icon</p>
+            <div>
+                <button type="button" class="btn btn-default">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/upload -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon h-5 w-5 me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
+                        <polyline points="7 9 12 4 17 9"></polyline>
+                        <line x1="12" y1="4" x2="12" y2="16"></line>
+                    </svg>
+                    <span>Upload</span>
+                </button>
+                <button type="button" class="btn btn-warning">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/heart -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon h-5 w-5 me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428m0 0a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path>
+                    </svg>
+                    <span>I like</span>
+                </button>
+                <button type="button" class="btn btn-success">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon h-5 w-5 me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M5 12l5 5l10 -10"></path>
+                    </svg>
+                    <span>I agree</span>
+                </button>
+                <button type="button" class="btn btn-primary">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon h-5 w-5 me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span>More</span>
+                </button>
+                <button type="button" class="btn btn-danger">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/link -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon h-5 w-5 me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path>
+                        <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path>
+                    </svg>
+                    <span>Link</span>
+                </button>
+                <button type="button" class="btn btn-info">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/message-circle -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon h-5 w-5 me-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1"></path>
+                        <line x1="12" y1="12" x2="12" y2="12.01"></line>
+                        <line x1="8" y1="12" x2="8" y2="12.01"></line>
+                        <line x1="16" y1="12" x2="16" y2="12.01"></line>
+                    </svg>
+                    <span>Comment</span>
+                </button>
+            </div>
+        </div>
+        <div>
+            <p class="mb-2">Button custom, ghost danger</p>
+            <div class="mb-2">
+                <button class="btn btn-outline-danger" 
+                    style="
+                        --bs-btn-border-color: transparent;
+                        --bs-btn-shadow-ring-color: transparent;
+                    ">Delete Button</button>
+            </div>
+            <div class="bg-dark rounded-2 p-2">
+                <code>
+                    <pre>&lt;button class="btn" 
+    style="
+        --bs-btn-border-color: transparent;
+        --bs-btn-shadow-ring-color: transparent;
+    "&gt;Ghost Danger&lt;/button&gt;</pre>
+                </code>
+            </div>
+        </div>
+    </div>
+</div>

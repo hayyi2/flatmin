@@ -1,0 +1,480 @@
+---
+title: Forms
+---
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card mb-5">
+            <div class="card-body">
+                <h4 class="card-title py-1 mb-4">Basic form</h4>
+                <div>
+                    <div class="mb-4">
+                        <label class="form-label required">Email address</label>
+                        <div>
+                            <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+                            <div class="form-hint">
+                                <small>We'll never share your email with anyone else.</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label required">Password</label>
+                        <div>
+                            <input type="password" class="form-control" placeholder="Password">
+                            <div class="form-hint">
+                                <small> Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Select</label>
+                        <div>
+                            <select class="form-select">
+                                <option>Option 1</option>
+                                <optgroup label="Optgroup 1">
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                </optgroup>
+                                <option>Option 2</option>
+                                <optgroup label="Optgroup 2">
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                </optgroup>
+                                <optgroup label="Optgroup 3">
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                </optgroup>
+                                <option>Option 3</option>
+                                <option>Option 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="~mb-4">
+                        <label class="form-label">Checkboxes</label>
+                        <div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                <label class="form-check-label" for="checkDefault">Default checkbox</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked>
+                                <label class="form-check-label" for="checkChecked">Checked checkbox</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkDisabled" disabled>
+                                <label class="form-check-label" for="checkDisabled">Disabled checkbox</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-end">
+                <button type="button" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="card mb-5">
+            <div class="card-body">
+                <h4 class="card-title py-1 mb-4">Horizontal form</h4>
+                <div class="mb-4 row">
+                    <label class="col-3 col-form-label required">Email address</label>
+                    <div class="col">
+                        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+                        <div class="form-hint">
+                            <small>We'll never share your email with anyone else.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4 row">
+                    <label class="col-3 col-form-label required">Password</label>
+                    <div class="col">
+                        <input type="password" class="form-control" placeholder="Password">
+                        <div class="form-hint">
+                            <small> Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4 row">
+                    <label class="col-3 col-form-label">Select</label>
+                    <div class="col">
+                        <select class="form-select">
+                            <option>Option 1</option>
+                            <optgroup label="Optgroup 1">
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                            </optgroup>
+                            <option>Option 2</option>
+                            <optgroup label="Optgroup 2">
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                            </optgroup>
+                            <optgroup label="Optgroup 3">
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                            </optgroup>
+                            <option>Option 3</option>
+                            <option>Option 4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-3 col-form-label pt-0">Checkboxes</label>
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="check2Default">
+                            <label class="form-check-label" for="check2Default">Default checkbox</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="check2Checked" checked>
+                            <label class="form-check-label" for="check2Checked">Checked checkbox</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="check2Disabled" disabled>
+                            <label class="form-check-label" for="check2Disabled">Disabled checkbox</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-end">
+                <button type="button" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card mb-5">
+    <div class="card-body">
+        <h4 class="card-title py-1">Form elements</h4>
+        <div class="row">
+            <div class="col-xl-4">
+                <div class="mb-4">
+                    <label class="form-label">Static</label>
+                    <div class="form-control-plaintext">Input value</div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Text</label>
+                    <input type="text" class="form-control" name="example-text-input" placeholder="Input placeholder">
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Password</label>
+                    <input type="text" class="form-control" name="example-password-input" placeholder="Input placeholder">
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Disabled</label>
+                    <input type="text" class="form-control" name="example-disabled-input" placeholder="Disabled..." value="Well, she turned me into a newt." disabled="">
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Readonly</label>
+                    <input type="text" class="form-control" name="example-disabled-input" placeholder="Readonly..." value="Well, how'd you become king, then?" readonly="">
+                </div>
+                <div class="mb-4">
+                    <label class="form-label required">Required</label>
+                    <input type="text" class="form-control" name="example-required-input" placeholder="Required...">
+                </div>
+                <div class="mb-4">
+                    <div class="form-label">Select</div>
+                    <select class="form-select">
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <div class="form-label">Select multiple</div>
+                    <select class="form-select" multiple="">
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Input group</label>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control" placeholder="Search for…">
+                        <button class="btn btn-default" type="button">Go!</button>
+                    </div>
+                    <div class="input-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span>Action</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Input group buttons</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                        <button type="button" class="btn btn-default">Action</button>
+                        <button data-bs-toggle="dropdown" type="button" data-bs-target="#dropdown2" class="btn btn-default rounded-end">
+                            <div>
+                                {% include "icons/chevron-down.njk" %}
+                            </div>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" id="dropdown2">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Icon input</label>
+                    <div class="input-icon mb-4">
+                        <input type="text" value="" class="form-control" placeholder="Search…">
+                        <span class="input-icon-addon">
+                            <!-- Download SVG icon from http://tabler-icons.io/i/search -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <circle cx="10" cy="10" r="7"></circle>
+                                <line x1="21" y1="21" x2="15" y2="15"></line>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="input-icon mb-4">
+                        <span class="input-icon-addon">
+                            <!-- Download SVG icon from http://tabler-icons.io/i/user -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                            </svg>
+                        </span>
+                        <input type="text" value="" class="form-control" placeholder="Username">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="mb-4">
+                    <label class="form-label">Form control rounded</label>
+                    <input type="text" class="form-control rounded-pill mb-2" name="Form control rounded" placeholder="Text..">
+                    <div class="input-icon">
+                        <input type="text" value="" class="form-control rounded-pill" placeholder="Search…">
+                        <span class="input-icon-addon">
+                            <!-- Download SVG icon from http://tabler-icons.io/i/search -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <circle cx="10" cy="10" r="7"></circle>
+                                <line x1="21" y1="21" x2="15" y2="15"></line>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Form control flush</label>
+                    <input type="text" class="form-control form-control-flush" name="Form control flush" placeholder="Text..">
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Input group</label>
+                    <div class="input-group mb-2">
+                        <span class="input-group-text">
+                                @
+                              </span>
+                        <input type="text" class="form-control" placeholder="username" autocomplete="off">
+                    </div>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control" placeholder="subdomain" autocomplete="off">
+                        <span class="input-group-text">
+                                .flatmin.io
+                              </span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text">
+                                https://
+                              </span>
+                        <input type="text" class="form-control" placeholder="subdomain" autocomplete="off">
+                        <span class="input-group-text">
+                                .flatmin.io
+                              </span>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Input with checkbox or radios</label>
+                    <div class="input-group mb-2">
+                        <span class="input-group-text">
+                            <input class="form-check-input m-0" type="checkbox" checked="">
+                        </span>
+                        <input type="text" class="form-control" autocomplete="off">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" autocomplete="off">
+                        <span class="input-group-text">
+                            <input class="form-check-input m-0" type="radio" checked="">
+                        </span>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Input with appended link</label>
+                    <div class="input-group input-group-flat">
+                        <input type="password" class="form-control" value="ultrastrongpassword" autocomplete="off">
+                        <span class="input-group-text">
+                            <a href="#" class="input-group-link">Show password</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Input with appended icon links</label>
+                    <div class="input-group input-group-flat">
+                        <input type="text" class="form-control" autocomplete="off">
+                        <span class="input-group-text">
+                            <a href="#" class="link-secondary" data-bs-toggle="tooltip" aria-label="Clear search" data-bs-original-title="Clear search">
+                                <!-- Download SVG icon from http://tabler-icons.io/i/x -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon w-5 h-5" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </a>
+                            <a href="#" class="link-secondary ms-2" data-bs-toggle="tooltip" aria-label="Search settings" data-bs-original-title="Search settings">
+                                <!-- Download SVG icon from http://tabler-icons.io/i/adjustments -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon w-5 h-5" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <circle cx="6" cy="10" r="2"></circle>
+                                    <line x1="6" y1="4" x2="6" y2="8"></line>
+                                    <line x1="6" y1="12" x2="6" y2="20"></line>
+                                    <circle cx="12" cy="16" r="2"></circle>
+                                    <line x1="12" y1="4" x2="12" y2="14"></line>
+                                    <line x1="12" y1="18" x2="12" y2="20"></line>
+                                    <circle cx="18" cy="7" r="2"></circle>
+                                    <line x1="18" y1="4" x2="18" y2="5"></line>
+                                    <line x1="18" y1="9" x2="18" y2="20"></line>
+                                </svg>
+                            </a>
+                            <a href="#" class="link-secondary ms-2 disabled" data-bs-toggle="tooltip" aria-label="Add notification" data-bs-original-title="Add notification">
+                                <!-- Download SVG icon from http://tabler-icons.io/i/bell -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon w-5 h-5" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6"></path>
+                                    <path d="M9 17v1a3 3 0 0 0 6 0v-1"></path>
+                                </svg>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Validation States </label>
+                    <input type="text" class="form-control is-valid mb-2" placeholder="Valid State..">
+                    <input type="text" class="form-control is-invalid" placeholder="Invalid State..">
+                    <div class="invalid-feedback">Invalid feedback</div>
+                </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="mb-4">
+                    <div class="form-label">Radios</div>
+                    <div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">Default radio</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">Checked radio</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioDisabled" disabled>
+                            <label class="form-check-label" for="flexRadioDisabled">Disabled radio</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="form-label">Inline Radios</div>
+                    <div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flexRadio2Default" id="flexRadio2Default1">
+                            <label class="form-check-label" for="flexRadio2Default1">Default</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flexRadio2Default" id="flexRadio2Default2" checked>
+                            <label class="form-check-label" for="flexRadio2Default2">Checked</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="flexRadio2Disabled" id="flexRadio2Disabled" disabled>
+                            <label class="form-check-label" for="flexRadio2Disabled">Disabled</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="form-label">Checkboxes</div>
+                    <div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="check11Default">
+                            <label class="form-check-label" for="check11Default">Default checkbox</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="check11Checked" checked="">
+                            <label class="form-check-label" for="check11Checked">Checked checkbox</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="check11Disabled" disabled="">
+                            <label class="form-check-label" for="check11Disabled">Disabled checkbox</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="form-label">Inline Checkboxes</div>
+                    <div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check12Default">
+                            <label class="form-check-label" for="check12Default">Default</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check12Checked" checked="">
+                            <label class="form-check-label" for="check12Checked">Checked</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" value="" id="check12Disabled" disabled="">
+                            <label class="form-check-label" for="check12Disabled">Disabled</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">Checkboxes with description</label>
+                    <div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="check11Default">
+                            <label class="form-check-label" for="check11Default">Default checkbox</label>
+                            <div>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </div>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="check11Checked" checked="">
+                            <label class="form-check-label" for="check11Checked">Checked checkbox</label>
+                            <div>
+                                    Ab alias aut, consequuntur cumque esse eveniet incidunt laborum minus molestiae.
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="form-label">Toggle switches</div>
+                    <div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                            <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDisabled" disabled>
+                            <label class="form-check-label" for="flexSwitchCheckDisabled">Disabled switch checkbox input</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedDisabled" checked disabled>
+                            <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Disabled checked switch checkbox input</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="form-label">Custom File Input</div>
+                    <input type="file" class="form-control">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

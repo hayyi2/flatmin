@@ -2,4 +2,7 @@
 
 {% block contentLayout %}
     {{ content | safe }}
+    <div class="text-center">
+        {% include "footer.njk" %}
+    </div>
 {% endblock %}

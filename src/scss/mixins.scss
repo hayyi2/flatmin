@@ -1,0 +1,113 @@
+@mixin caret-down {
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    transform: rotate(45deg);
+}
+
+@mixin caret-up {
+    border-left: 2px solid;
+    border-top: 2px solid;
+    transform: rotate(45deg);
+}
+
+@mixin caret-end {
+    border-top: 2px solid;
+    border-right: 2px solid;
+    transform: rotate(45deg);
+}
+
+@mixin caret-start {
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+}
+
+@mixin caret($direction: down) {
+    @if $enable-caret {
+        &::after {
+            display: inline-block;
+            margin-left: $caret-spacing;
+            vertical-align: $caret-vertical-align;
+            width: 6px;
+            height: 6px;
+            content: "";
+            @if $direction == down {
+                @include caret-down();
+            } @else if $direction == up {
+                @include caret-up();
+            } @else if $direction == end {
+                @include caret-end();
+            }
+        }
+
+        @if $direction == start {
+            &::after {
+                display: none;
+            }
+
+            &::before {
+                display: inline-block;
+                margin-right: $caret-spacing;
+                vertical-align: $caret-vertical-align;
+                content: "";
+                @include caret-start();
+            }
+        }
+
+        &:empty::after {
+            margin-left: 0;
+        }
+    }
+}
+// scss-docs-end caret-mixins
+
+// @mixin button-outline-variant(
+//     $color,
+//     $color-hover: color-contrast($color),
+//     $active-background: $color,
+//     $active-border: $color,
+//     $active-color: color-contrast($active-background)
+// ) {
+//     --#{$prefix}btn-color: #{$gray-600};
+//     // --#{$prefix}btn-color: #{$color};
+//     --#{$prefix}btn-border-color: #{$gray-300};
+//     --#{$prefix}btn-hover-color: #{$color-hover};
+//     --#{$prefix}btn-hover-bg: #{$active-background};
+//     --#{$prefix}btn-hover-border-color: #{$active-border};
+//     --#{$prefix}btn-focus-shadow-rgb: #{to-rgb($color)};
+//     --#{$prefix}btn-active-color: #{$active-color};
+//     --#{$prefix}btn-active-bg: #{$active-background};
+//     --#{$prefix}btn-active-border-color: #{$active-border};
+//     --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
+//     --#{$prefix}btn-disabled-color: #{$color};
+//     --#{$prefix}btn-disabled-bg: transparent;
+//     --#{$prefix}btn-disabled-border-color: #{$color};
+//     --#{$prefix}gradient: none;
+// }
+
+// @mixin custom-button-variant(
+//     $colors,
+//     $background: map-get($colors, 600),
+//     $border: map-get($colors, 600),
+//     $color: color-contrast(map-get($colors, 600)),
+//     $hover-background: map-get($colors, 700),
+//     $hover-border: map-get($colors, 700),
+//     $hover-color: color-contrast(map-get($colors, 700)),
+//     $disabled-background: map-get($colors, 500),
+//     $disabled-border: map-get($colors, 500),
+//     $disabled-color: color-contrast(map-get($colors, 500))
+// ) {
+//     --#{$prefix}btn-color: #{$color};
+//     --#{$prefix}btn-bg: #{$background};
+//     --#{$prefix}btn-border-color: #{$border};
+//     --#{$prefix}btn-hover-color: #{$hover-color};
+//     --#{$prefix}btn-hover-bg: #{$hover-background};
+//     --#{$prefix}btn-hover-border-color: #{$hover-border};
+//     // --#{$prefix}btn-focus-shadow-rgb: #{to-rgb(mix($color, $border, 15%))};
+//     --#{$prefix}btn-active-color: #{$hover-color};
+//     --#{$prefix}btn-active-bg: #{$hover-background};
+//     --#{$prefix}btn-active-border-color: #{$hover-border};
+//     // --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
+//     --#{$prefix}btn-disabled-color: #{$disabled-color};
+//     --#{$prefix}btn-disabled-bg: #{$disabled-background};
+//     --#{$prefix}btn-disabled-border-color: #{$disabled-border};
+// }

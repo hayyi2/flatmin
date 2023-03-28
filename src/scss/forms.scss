@@ -1,0 +1,102 @@
+@import "../../node_modules/bootstrap/scss/forms/labels";
+@import "../../node_modules/bootstrap/scss/forms/form-text";
+@import "../../node_modules/bootstrap/scss/forms/form-control";
+@import "../../node_modules/bootstrap/scss/forms/form-select";
+@import "../../node_modules/bootstrap/scss/forms/form-check";
+@import "../../node_modules/bootstrap/scss/forms/form-range";
+@import "../../node_modules/bootstrap/scss/forms/floating-labels";
+@import "../../node_modules/bootstrap/scss/forms/input-group";
+@import "../../node_modules/bootstrap/scss/forms/validation";
+
+.form-check {
+    .form-label {
+        margin-bottom: 0;
+    }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    --#{$prefix}shadow-ring-color: #{$input-shadow-ring-color};
+    --#{$prefix}shadow-ring-space-color: #{$white};
+}
+
+.bg-dark {
+    input[type="checkbox"],
+    input[type="radio"] {
+        --#{$prefix}shadow-ring-space-color: #{$dark};
+    }
+}
+
+.form-hint{
+    margin-top: $form-hint-space;
+    color: $form-hint-color;
+}
+
+.form-label.required:after {
+    content: "*";
+    margin-left: $form-label-required-space;
+    color: $form-label-required-color;
+}
+
+.input-group{
+    .btn{
+        --#{$prefix}btn-active-shadow: #{$input-btn-focus-box-shadow};
+        --#{$prefix}btn-focus-box-shadow: #{$input-btn-focus-box-shadow};
+        --#{$prefix}btn-hover-border-color: #{$input-focus-border-color};
+        --#{$prefix}btn-focus-border-color: #{$input-focus-border-color};
+        --#{$prefix}btn-active-border-color: #{$input-focus-border-color};
+
+        &:focus{
+            border-color: $input-focus-border-color;
+            box-shadow: $input-btn-focus-box-shadow;
+        }
+    }
+}
+
+.input-icon{
+    position: relative;
+    .input-icon-addon{
+        position: absolute;
+        top: $input-padding-y;
+        color: $input-placeholder-color;
+        padding-left: $input-padding-x;
+        padding-right: $input-padding-x;
+        .icon{
+            width: $input-icon-width;
+            height: $input-icon-width;
+        }
+        &:last-child{
+            right: 0;
+        }
+    }
+    .form-control:nth-child(even){
+        padding-left: $input-icon-width + ($input-padding-x * 2);
+    }
+    .form-control:not(last-child){
+        padding-right: $input-icon-width + ($input-padding-x * 2);
+    }
+}
+
+.form-control-flush{
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: none;
+    border: none;
+    
+    &:focus{
+        border: none;
+        box-shadow: none;
+    }
+}
+
+.was-validated .form-control:valid, .form-control.is-valid, .was-validated .form-control:invalid, .form-control.is-invalid{
+    background-position: right $input-padding-x center;
+}
+
+.form-check{
+    color: $form-check-color;
+}
+
+.form-check-label{
+    font-weight: $form-check-label-font-weight;
+}

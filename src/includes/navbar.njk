@@ -1,0 +1,134 @@
+<nav class="navbar navbar-expand-lg bg-white shadow">
+    <div class="container-xl">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarMenuCollapse" aria-controls="navbarMenuCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2 w-5 h-5" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="4" y1="6" x2="20" y2="6"></line>
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <line x1="4" y1="18" x2="20" y2="18"></line>
+            </svg>
+        </button>
+        {% include "brand.njk" %}
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav nav-tabs mb-2 mb-lg-0">
+                {% for key, item in menu.navbar %}
+                    {% if item.divider %}
+                    {% elif item.subMenu %}
+                        {% set activeMenu = false %}
+                        {% for subKey, subItem in item.subMenu %}
+                            {% if subItem.url in page.url %}
+                                {% set activeMenu = true %}
+                            {% endif %}
+                        {% endfor %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle {{ ' active' if activeMenu else '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {% if item.icon %}
+                                    {% include "icons/" + item.icon + ".njk" %}
+                                {% endif %}
+                                <span>{{item.label}}</span>
+                                {% include "icons/chevron-down.njk" %}
+                            </a>
+                            <ul class="dropdown-menu">
+                                {% for subKey, subItem in item.subMenu %}
+                                    {% set activeMenu = true if (subItem.url == '' and page.url == '/') or (subItem.url != '' and subItem.url in page.url) else false %}
+                                    {% if subItem.divider %}
+                                        <li><hr class="dropdown-divider"></li>
+                                    {% else %}
+                                        <li>
+                                            <a class="dropdown-item{{ ' active' if activeMenu else '' }}" href="{{ subItem.url }}">
+                                                {% if subItem.icon %}
+                                                    {% include "icons/" + subItem.icon + ".njk" %}
+                                                {% endif %}
+                                                <span>{{ subItem.label }}</span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% else %}
+                        {% set activeMenu = true if (item.url == '' and page.url == '/') or (item.url != '' and item.url in page.url) else false %}
+                        <li class="nav-item">
+                            <a class="nav-link{{ ' active' if activeMenu else '' }}" aria-current="page" href="{{ item.url }}">
+                                {% if item.icon %}
+                                    {% include "icons/" + item.icon + ".njk" %}
+                                {% endif %}
+                                <span>{{ item.label }}</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <ul class="navbar-nav nav-tabs ms-auto">
+                <li class="nav-item d-none d-sm-block">
+                    <a class="btn btn-default btn-icon me-1 me-md-2" aria-current="page" href="{{ site.repository }}" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github w-5 h-5" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+                        </svg>
+                        <span class="ms-1 d-none d-md-block">Github</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 icon-tabler icon-tabler-bell" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6"></path>
+                            <path d="M9 17v1a3 3 0 0 0 6 0v-1"></path>
+                        </svg>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="#">Notification</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle nav-link-avatar" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="d-none d-md-block me-1">Keroro Gunsou</span>&nbsp;
+                        <div class="avatar">KG</div>
+                        {% include "icons/chevron-down.njk" %}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                                </svg>
+                                <span>View Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 icon icon-tabler icon-tabler-settings" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                <span>Change Profile</span>
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 icon icon-tabler icon-tabler-logout" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"></path>
+                                    <path d="M7 12h14l-3 -3m0 6l3 -3"></path>
+                                </svg>
+                                <span>Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="sidenav sidenav-tabs bg-white offcanvas offcanvas-start" id="navbarMenuCollapse">
+    {% include "sidenav-content.njk" %}
+</div>

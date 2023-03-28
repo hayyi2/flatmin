@@ -1,0 +1,55 @@
+.btn {
+    display: inline-flex;
+    --#{$prefix}shadow-ring-color: var(--#{$prefix}btn-shadow-ring-color);
+    --#{$prefix}shadow-ring-space-color: #{$white};
+
+    &:focus {
+        box-shadow: $btn-active-box-shadow;
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .btn-#{$color} {
+        --#{$prefix}btn-shadow-ring-color: #{$value};
+    }
+    .btn-outline-#{$color} {
+        --#{$prefix}btn-border-color: #{$value};
+        --#{$prefix}btn-shadow-ring-color: #{$value};
+    }
+}
+
+.btn-default {
+    --#{$prefix}btn-bg: #{$btn-default-light-bg};
+    --#{$prefix}btn-color: #{$btn-default-light-color};
+    --#{$prefix}btn-border-color: #{$btn-default-light-border-color};
+    --#{$prefix}btn-hover-bg: #{$btn-default-light-hover-bg};
+    --#{$prefix}btn-hover-color: #{$btn-default-light-hover-color};
+    --#{$prefix}btn-hover-border-color: #{$btn-default-light-hover-border-color};
+    --#{$prefix}btn-active-bg: #{$btn-default-light-hover-bg};
+    --#{$prefix}btn-active-color: #{$btn-default-light-hover-color};
+    --#{$prefix}btn-active-border-color: #{$btn-default-light-hover-border-color};
+    --#{$prefix}btn-shadow-ring-color: #{$component-active-bg};
+}
+
+.bg-dark {
+    .btn {
+        --#{$prefix}shadow-ring-space-color: #{$dark};
+    }
+
+    .btn-default {
+        --#{$prefix}btn-bg: #{$btn-default-dark-bg};
+        --#{$prefix}btn-color: #{$btn-default-dark-color};
+        --#{$prefix}btn-border-color: #{$btn-default-dark-border-color};
+        --#{$prefix}btn-hover-bg: #{$btn-default-dark-hover-bg};
+        --#{$prefix}btn-hover-color: #{$btn-default-dark-hover-color};
+        --#{$prefix}btn-hover-border-color: #{$btn-default-dark-hover-border-color};
+        --#{$prefix}btn-active-bg: #{$btn-default-dark-hover-bg};
+        --#{$prefix}btn-active-color: #{$btn-default-dark-hover-color};
+        --#{$prefix}btn-active-border-color: #{$btn-default-dark-hover-border-color};
+    }
+}
+
+.btn-xs {
+    line-height: 1.125;
+    @include button-size($btn-padding-y-xs, $btn-padding-x-xs, $btn-font-size-sm, $btn-border-radius-sm);
+}

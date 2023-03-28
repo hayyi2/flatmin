@@ -1,0 +1,28 @@
+.card{
+    overflow: hidden;
+    box-shadow: $card-box-shadow;
+    .card-header{
+        display: flex;
+        justify-content: space-between;
+        .card-title{
+            margin-top: var(--#{$prefix}card-title-spacer-y);
+        }
+
+        .nav-tabs:first-child{
+            margin-left: $nav-link-padding-x * -1;
+        }
+    }
+    .card-title{
+        font-size: $h5-font-size;
+    }
+    > .table, > .table-responsive > .table {
+        tr{
+            th:first-child, td:first-child{
+                padding-left: $card-spacer-x;
+            }
+            th:last-child, td:last-child{
+                padding-right: $card-spacer-x;
+            }
+        }
+    }
+}

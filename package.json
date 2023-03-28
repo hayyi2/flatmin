@@ -1,7 +1,7 @@
 {
   "name": "flatmin",
   "version": "1.0.0",
-  "description": "Dresh bootstrap dashboard template",
+  "description": "Fresh bootstrap dashboard template",
   "main": "index.js",
   "scripts": {
     "dev": "npm-run-all -p dev:*",

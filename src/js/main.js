@@ -9,8 +9,18 @@
 
 import "../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     document.querySelector('#test').addEventListener('click', function() {
-//         alert("Test")
-//     })
-// });
+document.addEventListener("DOMContentLoaded", () => {
+    const trigerSidebar = document.querySelector('[data-bs-toggle=sidebar]')
+    if (trigerSidebar) {
+        trigerSidebar
+            .addEventListener('click', event => {
+                let targetSidenav = document.querySelector(event.currentTarget.getAttribute('data-bs-target'))
+                if (!targetSidenav) return;
+                if (targetSidenav.classList.contains('hidden')) {
+                    targetSidenav.classList.remove("hidden")
+                } else {
+                    targetSidenav.classList.add("hidden")
+                }
+            })
+    }
+});

@@ -1,0 +1,13 @@
+.page-link{
+    border-radius: var(--bs-pagination-border-radius);
+    min-width: $line-height-base + $pagination-padding-y * 2;
+    text-align: center;
+    font-weight: $pagination-font-weight;
+    display: flex;
+}
+
+.bg-light{
+    .page-link:hover{
+        background-color: $gray-100;
+    }
+}

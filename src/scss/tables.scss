@@ -1,0 +1,16 @@
+.table{
+    thead{
+        background-color: $table-thead-bg;
+        tr{
+            th{
+                padding-top: $table-cell-padding-y * 1.5;
+                padding-bottom: $table-cell-padding-y * 1.5;
+                font-size: $font-size-sm;
+                font-weight: $font-weight-semibold;
+                letter-spacing: .05em;
+                text-transform: uppercase;
+                color: $gray-500;
+            }
+        }
+    }
+}
